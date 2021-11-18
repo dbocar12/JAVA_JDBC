@@ -47,7 +47,7 @@ public class CommuneCSVImporter implements CommuneImporter {
                 }
             }
              int [] nb_lines_inserted = statement.executeBatch();
-            System.out.println(Arrays.toString(nb_lines_inserted).length());
+            //System.out.println(Arrays.toString(nb_lines_inserted).length());
             lineReader.close();
             System.out.println("Data has been inserted successfully.");
 
