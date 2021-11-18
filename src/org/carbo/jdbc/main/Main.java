@@ -16,11 +16,11 @@ public class Main {
 
             Connection connect = DriverManager
                     .getConnection("jdbc:mysql://localhost/Commune?"
-                            + "user=sa&password=" +"&useSSL=false");
+                            + "user=sa&password=sa" +"&useSSL=false");
             String path = "data/communes.csv";
 
-            //CommuneImporter testCSV = new CommuneCSVImporter(connect);
-           // testCSV.importCommunes(path);
+            CommuneImporter testCSV = new CommuneCSVImporter(connect);
+           testCSV.importCommunes(path);
 
             CommuneDBService test = new CommuneDBServiceImpl(connect);
             System.out.println("----------------------------------- GET COMMUNE BY ID ----------------------------");

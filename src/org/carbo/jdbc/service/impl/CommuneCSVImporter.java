@@ -44,14 +44,11 @@ public class CommuneCSVImporter implements CommuneImporter {
                     System.out.println("doublon:"+prevCommune);
                 } else {
                     statement = communeDBService.writeCommune(com);
-                    //statement.executeBatch();
                 }
             }
-            int [] nb_lines_inserted = statement.executeBatch();
-            System.out.println(Arrays.toString(nb_lines_inserted));
+             int [] nb_lines_inserted = statement.executeBatch();
+            System.out.println(Arrays.toString(nb_lines_inserted).length());
             lineReader.close();
-            // connect.commit();
-            // connect.close();
             System.out.println("Data has been inserted successfully.");
 
         } catch (IOException | SQLException e) {
